@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>br.com.rafaelsoto.java2sql</groupId>
+  <artifactId>java2sql</artifactId>
+  <version>1.0.1-SNAPSHOT</version>
+  <versioning>
+    <snapshot>
+      <timestamp>20100308.193703</timestamp>
+      <buildNumber>1</buildNumber>
+    </snapshot>
+    <lastUpdated>20100308193712</lastUpdated>
+  </versioning>
+</metadata>

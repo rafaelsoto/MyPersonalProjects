@@ -1,0 +1,105 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>br.com.rafaelsoto.ov2java</groupId>
+  <artifactId>ov2java</artifactId>
+  <version>0.1-TEST</version>
+  <packaging>jar</packaging>
+
+  <name>ov2java</name>
+  <url>http://maven.apache.org</url>
+
+	<properties>
+		<encoding.default>UTF-8</encoding.default>
+		<jdk.version>1.6</jdk.version>
+	</properties>
+	
+ 	<licenses>
+		<license>
+		<distribution>repo</distribution>
+		<name>Apache License, Version 2.0</name>
+		<url>http://apache.org/licenses/LICENSE-2.0.txt</url>
+		</license>
+	</licenses>
+		
+	 <developers>
+		 <developer>
+			<id>rafael.soto</id>
+			<name>Rafael Soto</name>
+			<email>rafael.soto@gmail.com</email>
+			<organization>SERPRO</organization>
+			<organizationUrl>http://www.serpro.gov.br</organizationUrl>
+			<roles>
+			<role>System Analyst</role>
+			</roles>
+			<timezone>-3</timezone>
+		</developer>
+	</developers>
+	
+	<distributionManagement>
+	    <repository>
+	      <id>ov2java.repo</id>
+	      <url>scm:svn:https://rafael.soto@ov2java.googlecode.com/svn/trunk/repo</url>
+	    </repository>
+  	</distributionManagement>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>${jdk.version}</source>
+					<target>${jdk.version}</target>
+					<encoding>${encoding.default}</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.3</version>
+				<configuration>
+					<encoding>${encoding.default}</encoding>
+				</configuration>
+			</plugin>		
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-site-plugin</artifactId>
+				<version>2.0.1</version>
+				<configuration>
+					<inputEncoding>${encoding.default}</inputEncoding>
+					<outputEncoding>${encoding.default}</outputEncoding>
+					<locales>pt_BR</locales>
+				</configuration>
+			</plugin>
+		</plugins>
+		<extensions>
+		      <extension>
+		        <groupId>org.apache.maven.wagon</groupId>
+		        <artifactId>wagon-scm</artifactId>
+		        <version>1.0-beta-6</version>
+		      </extension>
+		      <extension>
+		        <groupId>org.apache.maven.scm</groupId>
+		        <artifactId>maven-scm-manager-plexus</artifactId>
+		        <version>1.0</version>
+		      </extension>
+		      <extension>
+		        <groupId>org.apache.maven.scm</groupId>
+		        <artifactId>maven-scm-provider-svnexe</artifactId>
+		        <version>1.0</version>
+		      </extension>
+    	</extensions>
+	</build>
+
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.8.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+</project>

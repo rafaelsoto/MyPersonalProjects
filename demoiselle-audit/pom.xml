@@ -1,0 +1,96 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>br.gov.demoiselle.sample</groupId>
+	<artifactId>contactlist-jsf2</artifactId>
+	<version>2.0.0-SNAPSHOT</version>
+	<packaging>war</packaging>
+
+	<parent>
+		<groupId>br.gov.demoiselle</groupId>
+		<artifactId>parent</artifactId>
+		<version>2.0.0-SNAPSHOT</version>
+	</parent>
+
+	<dependencies>
+		<!-- Demoiselle Extensions -->
+		<dependency>
+			<groupId>br.gov.demoiselle</groupId>
+			<artifactId>demoiselle-faces</artifactId>
+			<version>2.0.0-SNAPSHOT</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>br.gov.demoiselle</groupId>
+			<artifactId>demoiselle-persistence</artifactId>
+			<version>2.0.0-SNAPSHOT</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<!-- Implementação de injeção e contextos -->
+		<dependency>
+			<groupId>org.jboss.weld</groupId>
+			<artifactId>weld-core</artifactId>
+			<version>1.0.1-SP4</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.jboss.weld.servlet</groupId>
+			<artifactId>weld-servlet</artifactId>
+			<version>1.0.1-Final</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<!-- Implementação de faces -->
+		<dependency>
+			<groupId>org.primefaces</groupId>
+			<artifactId>primefaces</artifactId>
+			<version>2.0.2</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<!-- Implementação de persistência -->
+		<dependency>
+			<groupId>org.eclipse.persistence</groupId>
+			<artifactId>eclipselink</artifactId>
+			<version>2.1.0</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<!-- Implementação de validação -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>4.0.2.GA</version>
+		</dependency>
+
+		<!-- Implementação de log -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.5.10</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<!-- Banco de dados embarcado -->
+		<dependency>
+			<groupId>hsqldb</groupId>
+			<artifactId>hsqldb</artifactId>
+			<version>1.8.0.10</version>
+			<scope>compile</scope>
+		</dependency>
+		
+
+	</dependencies>
+
+	<repositories>
+		<repository>
+			<id>demoiselle.sourceforge.net</id>
+			<name>Demoiselle Maven Repository</name>
+			<url>http://demoiselle.sourceforge.net/maven2</url>
+		</repository>
+	</repositories>
+
+</project>

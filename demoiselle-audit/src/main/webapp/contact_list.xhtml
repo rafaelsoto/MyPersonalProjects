@@ -1,0 +1,42 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.prime.com.tr/ui" xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets" template="/template/main.xhtml">
+
+	<ui:define name="body">
+		Contact List
+		
+		<h:form>
+			<h:commandButton value="Novo" action="#{contactEditMB.getCurrentView}" actionListener="#{contactListMB.clear}">
+				<f:param name="id" value="" />
+			</h:commandButton>
+
+			<h:commandButton value="Carga" action="#{contactListMB.carga}" update="list">
+				<!--				<f:attribute name="oi" value="AAAAAAAAAAA" />-->
+			</h:commandButton>
+
+			<p:commandButton value="Refresh" action="#{contactListMB.clear}" update="list" />
+			<p:commandButton value="Testa transação" action="#{contactListMB.cargaComRollBack}" update="list" />
+			
+			<!-- TESTES AUDITORIA -->
+			<p:commandButton value="Clear Telephones" action="#{contactListMB.clearTelephones}" update="list" />
+
+			<p:dataTable id="list" var="contact" value="#{contactListMB.dataModel}">
+				<p:column>
+					<f:facet name="header">Id</f:facet>
+					<h:outputText value="#{contact.id}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">Name</f:facet>
+					<h:outputText value="#{contact.name}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">Action</f:facet>
+					<h:commandButton value="Edit" action="#{contactEditMB.getCurrentView}" actionListener="#{contactListMB.clear}">
+						<f:param name="id" value="#{contact.id}" />
+					</h:commandButton>
+				</p:column>
+			</p:dataTable>
+		</h:form>
+	</ui:define>
+
+</ui:composition>

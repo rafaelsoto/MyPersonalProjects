@@ -1,0 +1,43 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.prime.com.tr/ui" xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets" template="/template/main.xhtml">
+
+	<ui:define name="body">
+		<h:form>
+			<br />
+			<h:outputLabel value="Cód: " for="id" />
+			<h:outputText id="id" value="#{contactEditMB.bean.id}" />
+			<br />
+
+			<h:outputLabel value="Nome: " for="name" />
+			<h:inputText id="name" value="#{contactEditMB.bean.name}" />
+			<h:message for="name" />
+			<br />
+
+			<h:outputLabel value="CPF" for="cpf" />
+			<h:inputText id="cpf" value="#{contactEditMB.bean.cpf}" />
+			<h:message for="cpf" />
+			<br />
+
+
+			<p:dataTable id="list" var="phone" value="#{contactEditMB.bean.phones}">
+				<p:column>
+					<f:facet name="header">Number</f:facet>
+					<h:outputText value="#{phone.number}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">Type</f:facet>
+					<h:outputText value="#{phone.type}" />
+				</p:column>
+			</p:dataTable>
+
+			<br />
+			<h:commandButton value="Save" action="#{contactEditMB.insert}" rendered="#{!contactEditMB.updateMode}" />
+			<h:commandButton value="Save" action="#{contactEditMB.update}" rendered="#{contactEditMB.updateMode}" />
+			<h:commandButton value="Delete" action="#{contactEditMB.delete}" rendered="#{contactEditMB.updateMode}"
+				immediate="true" />
+
+		</h:form>
+	</ui:define>
+
+</ui:composition>

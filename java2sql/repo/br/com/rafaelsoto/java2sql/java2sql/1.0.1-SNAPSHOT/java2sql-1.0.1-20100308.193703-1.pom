@@ -1,0 +1,80 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>br.com.rafaelsoto.java2sql</groupId>
+  <artifactId>java2sql</artifactId>
+  <packaging>jar</packaging>
+  <version>1.0.1-SNAPSHOT</version>
+  <name>java2sql</name>
+  <url>java2sql.googlecode.com</url>
+  <description>Java2SQL</description>
+<licenses>
+  <license>
+    <name>Apache 2</name>
+    <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+    <distribution>repo</distribution>
+    <comments>A business-friendly OSS license</comments>
+  </license>
+</licenses>
+
+	 <developers>
+		 <developer>
+			<id>rafael.soto</id>
+			<name>Rafael Soto</name>
+			<email>rafael.soto@gmail.com</email>
+			<organization>SERPRO</organization>
+			<organizationUrl>http://www.serpro.gov.br</organizationUrl>
+			<roles>
+			<role>System Analyst</role>
+			</roles>
+			<timezone>-3</timezone>
+		</developer>
+	</developers>
+ 
+	<distributionManagement>
+	    <repository>
+	      <id>java2sql.repo</id>
+	      <url>scm:svn:https://rafael.soto@java2sql.googlecode.com/svn/trunk/repo</url>
+	    </repository>
+  	</distributionManagement>
+  
+
+  <build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.3</version>
+				<configuration>
+					<encoding>${encoding.default}</encoding>
+				</configuration>
+			</plugin>		
+		</plugins>
+		<extensions>
+		      <extension>
+		        <groupId>org.apache.maven.wagon</groupId>
+		        <artifactId>wagon-scm</artifactId>
+		        <version>1.0-beta-6</version>
+		      </extension>
+		      <extension>
+		        <groupId>org.apache.maven.scm</groupId>
+		        <artifactId>maven-scm-manager-plexus</artifactId>
+		        <version>1.0</version>
+		      </extension>
+		      <extension>
+		        <groupId>org.apache.maven.scm</groupId>
+		        <artifactId>maven-scm-provider-svnexe</artifactId>
+		        <version>1.0</version>
+		      </extension>
+    	</extensions>
+	</build>
+  
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.7</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+</project>

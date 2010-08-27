@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.prime.com.tr/ui" xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<f:view contentType="text/html" />
+
+<h:head>
+	<title>Contact List</title>
+</h:head>
+
+<!--<f:metadata>-->
+<!--	<f:viewParam name="id" value="#{contactEditMB.id}" converter="javax.faces.Long" />-->
+<!--</f:metadata>-->
+
+<h:body>
+	<p:growl id="messages" globalOnly="true" />
+
+	<table border="1" width="100%">
+		<tr height="100px">
+			<td width="200px" align="center"><a href="home.jsf">Logotipo</a></td>
+			<td align="center">Banner</td>
+		</tr>
+		<tr height="20px">
+			<td colspan="2" align="center"></td>
+		</tr>
+		<tr height="400px" valign="top">
+			<td><ui:include src="/menu.xhtml" /></td>
+			<td><ui:insert name="body" /></td>
+		</tr>
+		<tr height="20px">
+			<td colspan="2" align="center">Rodapé</td>
+		</tr>
+	</table>
+
+	<p:ajaxStatus style="width:16px;height:16px;">
+		<f:facet name="start">
+			<h:graphicImage value="../design/ajaxloading.gif" />
+		</f:facet>
+
+		<f:facet name="complete">
+			<h:outputText value="" />
+		</f:facet>
+	</p:ajaxStatus>
+</h:body>
+</html>
